@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aircraft Virtual Tour</title>
+    <link rel="stylesheet" href="AVT_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="logo-placeholder.png" alt="Logo" class="logo">
+            <span class="site-title">Aircraft Virtual Tour</span>
+        </div>
+        <div class="user-info">
+            <span>Welcome Guest</span>
+            <a href="#" class="logout-btn">Logout</a>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div>Today: March 17, 2025, 2:02:44 AM</div>
+        <div class="system-status"><i class="fas fa-check-circle"></i> All systems operational</div>
+    </div>
+    
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Left Sidebar -->
+        <div class="sidebar-left">
+            <section class="card sidebar-section about-section">
+                <div class="card-header">
+                    <h2 class="section-title">About the Aircraft</h2>
+                    <button class="collapse-btn"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="card-content">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-info-circle info-icon"></i> Introduction to Search and Rescue</li>
+                        <li><i class="fas fa-info-circle info-icon"></i> Special Features (Radar, Supplies)</li>
+                    </ul>
+                    <button class="view-btn">View Details</button>
+                </div>
+            </section>
+            
+            <section class="card sidebar-section contact-section">
+                <div class="card-header">
+                    <h2 class="section-title">Contact Us</h2>
+                    <button class="collapse-btn"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="card-content">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-info-circle info-icon"></i> Project Team Information</li>
+                        <li><i class="fas fa-info-circle info-icon"></i> Inquiry Link</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="card model-section">
+                <div class="card-header">
+                    <h2 class="section-title">3D Aircraft Model</h2>
+                    <button class="collapse-btn"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="card-content">
+                    <div class="model-placeholder">
+                        [3D Model Placeholder]
+                    </div>
+                    <p class="coming-soon">Explore the Aircraft in 3D (Coming Soon!)</p>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Right Sidebar -->
+        <div class="sidebar-right">
+            <a href="#" class="link-card">
+                <i class="fas fa-book"></i>
+                <span>Documentation</span>
+            </a>
+            
+            <a href="#" class="link-card">
+                <i class="fas fa-question-circle"></i>
+                <span>Help</span>
+            </a>
+            
+            <a href="#" class="link-card">
+                <i class="fas fa-users"></i>
+                <span>Support</span>
+            </a>
+            
+            <a href="#" class="link-card">
+                <i class="fas fa-building"></i>
+                <span>Visit Center</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
