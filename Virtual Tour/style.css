@@ -6,19 +6,23 @@
 }
 
 body {
-    background-color: #F3F4F9;
+    background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
 }
 
 /* Header Styles */
 .main-header {
-    background-color: #0052a0;
+    background-color: #004b87;
     color: white;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo-container {
@@ -45,6 +49,105 @@ body {
     margin-left: 15px;
     color: white;
     text-decoration: none;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 80vh;
+    background: linear-gradient(rgba(0, 75, 135, 0.8), rgba(0, 75, 135, 0.6)),
+                url('hero-background.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    margin-top: 70px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff5252;
+}
+
+/* Footer Links Container */
+.footer-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    margin-top: 40px;
+}
+
+.footer-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #004b87;
+    transition: transform 0.3s;
+    min-width: 100px;
+}
+
+.footer-link:hover {
+    transform: translateY(-5px);
+}
+
+.footer-link i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer-link span {
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #004b87;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-links {
+    margin-top: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
 
 /* Navigation Styles */
@@ -381,5 +484,23 @@ ul.connect-nav-bar a:hover{
     
     .link-card {
         flex: 1 1 40%;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .footer-links-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .footer-link {
+        flex: 1 1 40%;
+        min-width: auto;
     }
 }
