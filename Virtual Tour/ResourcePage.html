@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Page - UniSA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .process-image {
+            width: 100%;
+            border-radius: 5px;
+            margin: 15px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .process-steps {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .process-steps li {
+            position: relative;
+            padding: 15px 15px 15px 50px;
+            background: #f8f9fa;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        
+        .process-steps li:before {
+            content: counter(step);
+            counter-increment: step;
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #004b87;
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .floor-plan-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .floor-plan {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .intro-text {
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        .section-subtitle {
+            color: #004b87;
+            margin: 20px 0 10px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        /* New styles for improved layout */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .resource-card:nth-child(1) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        
+        .resource-card:nth-child(2) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+        
+        .resource-card:nth-child(3) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+        
+        .resource-card:nth-child(4) {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+        
+        @media (max-width: 992px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resource-card:nth-child(n) {
+                grid-column: 1;
+            }
+            
+            .resource-card:nth-child(1) { grid-row: 1; }
+            .resource-card:nth-child(2) { grid-row: 2; }
+            .resource-card:nth-child(3) { grid-row: 3; }
+            .resource-card:nth-child(4) { grid-row: 4; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="logo_unisa.svg" alt="UniSA Logo" class="logo">
+            <span class="logo-divider">|</span>
+            <div class="anff-logo-container">
+                <img src="ANFF_icon.jpg" alt="ANFF Icon" class="logo anff-logo">
+            </div>
+            <span class="site-title">Virtual Tour</span>
+        </div>
+        <div class="user-info">
+            <span>Welcome Guest</span>
+            <a href="VirtualTour.html" class="logout-btn">Back to Home</a>
+        </div>
+    </header>
+    
+    <!-- Hero Section - Smaller for Resource Page -->
+    <section class="hero-section" style="height: 50vh;">
+        <div class="hero-content">
+            <h1>PHOTOLITHOGRAPHY</h1>
+            <p>Australian National Fabrication Facility (ANFF-SA)</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="resource-grid">
+                <!-- Laboratory Overview -->
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h2><i class="fas fa-flask"></i> Laboratory Overview</h2>
+                    </div>
+                    <div class="resource-content">
+                        <p class="intro-text">Lithography is the process by which a pattern is written or transferred to a substrate. The same pattern may be copied to many substrates, enabling the mass production of devices such as integrated semiconductor circuits of very fine scale which are the heart of microprocessor chips.</p>
+                        
+                        <p class="intro-text">This virtual tour will take you around the ANFF-SA photolithography cleanroom, showcasing the special equipment needed for the process from blank silicon wafer to the final pattern after development.</p>
+                        
+                        <img src="photolithography_lab_room.jpg" alt="Photolithography Lab Room" class="process-image">
+                        
+                        <h3 class="section-subtitle">Cleanroom Layout</h3>
+                        <p>The process occurs in four areas of the cleanroom: two fume hoods with chemicals needed for carrying out the coating and development (Fumehood #1 and Fumehood #2 in the floor plan diagram), the spin coater machine, and the mask aligner unit.</p>
+                        
+                        <div class="floor-plan-container">
+                            <img src="lab_floor_plan.png" alt="Lab Floor Plan" class="floor-plan">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Equipment -->
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h2><i class="fas fa-microscope"></i> Equipment & Facilities</h2>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="section-subtitle">Fumehood #1 & Mask Aligner</h3>
+                        <p>Fumehood #1 is used for the prebake process. The mask alignment system is used to expose ultraviolet light through the mask onto the photoresist-coated wafer.</p>
+                        <img src="Fumehood_1_and_The_mask_aligner_unit.png" alt="Fumehood 1 and Mask Aligner" class="process-image">
+                        
+                        <h3 class="section-subtitle">Spin Coater</h3>
+                        <p>The spin coater is used to uniformly spread a layer of photoresist on the silicon wafer. The wafer is first cleaned, and then a small amount of photoresist is applied. The wafer is spun in a controlled series of steps that results in a uniformly thick coating of photoresist over the entire surface.</p>
+                        <img src="spin_coater_unit.png" alt="Spin Coater Unit" class="process-image">
+                        
+                        <h3 class="section-subtitle">Fumehood #2</h3>
+                        <p>Fumehood #2 stores the silicon wafers and photoresist, and is used for the development process. Here, the exposed wafer is developed in a developer solution, cleaned in a water and alcohol mixture, and finally dried with ultrapure nitrogen gas.</p>
+                        <img src="Fumehood_2.png" alt="Fumehood 2" class="process-image">
+                    </div>
+                </div>
+                
+                <!-- Processes -->
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h2><i class="fas fa-cogs"></i> Photolithography Process</h2>
+                    </div>
+                    <div class="resource-content">
+                        <p class="intro-text">The photolithography process used at ANFF-SA utilizes an optically-sensitive chemical called a photoresist that forms a blank "canvas" on a silicon wafer. A thin layer of liquid photoresist is spread onto the wafer by spinning, in order to achieve a thin, uniform layer. This coated wafer is baked in order to dry the coating.</p>
+                        
+                        <ol class="process-steps" style="counter-reset: step 0;">
+                            <li>Prepare the silicon wafer and photoresist in Fumehood #2</li>
+                            <li>Move the wafer to the spin coater, first clean the wafer, then apply a small amount of photoresist</li>
+                            <li>Spin the wafer in a controlled series of steps to achieve a uniformly thick coating of photoresist over the entire surface</li>
+                            <li>Carefully transfer the wafer to Fumehood #1 for the prebake process</li>
+                            <li>After cooling, place the wafer in the mask alignment system for exposure</li>
+                            <li>Install special trays in the mask aligner to facilitate holding the coated, dried wafer and positioning the mask directly on top of it</li>
+                            <li>Once all parts are in place, expose the UV light onto the mask</li>
+                            <li>After exposure, remove the exposed wafer from the mask aligner and transfer back to Fumehood #2</li>
+                            <li>Bathe in a developer solution for about a minute, during which parts of the wafer under transparent parts of the mask dissolve into solution</li>
+                            <li>Move the wafer into a beaker containing a water+alcohol mixture to stop the development process and clean the wafer</li>
+                            <li>Finish by carefully blowing and drying the wafer with a jet of ultrapure nitrogen gas</li>
+                        </ol>
+                        
+                        <p>Through this process, a desired pattern is created on the wafer using a glass mask that has the master pattern in an opaque material (usually metal) laid onto it. The mask is placed over the coated wafer, and a beam of ultraviolet light is shined above the mask. The parts of the mask with clear glass expose the photoresist and cause a chemical change to happen, which those parts with the opaque coating are shielded from the light.</p>
+                    </div>
+                </div>
+                
+                <!-- Research & Applications -->
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h2><i class="fas fa-lightbulb"></i> Applications & Research</h2>
+                    </div>
+                    <div class="resource-content">
+                        <p class="intro-text">Photolithography technology is a fundamental process in modern microelectronics and nanotechnology fields, making the production of large-scale integrated circuits (ICs) possible.</p>
+                        
+                        <h3 class="section-subtitle">Key Application Areas</h3>
+                        <ul>
+                            <li>Semiconductor integrated circuit manufacturing</li>
+                            <li>Micro-electromechanical systems (MEMS) fabrication</li>
+                            <li>Microfluidic device development</li>
+                            <li>Advanced sensor manufacturing</li>
+                            <li>Photonic component fabrication</li>
+                        </ul>
+                        
+                        <h3 class="section-subtitle">Research Advantages at ANFF-SA</h3>
+                        <p>The photolithography facilities at ANFF-SA can achieve feature resolutions approaching 1 µm. This precision allows researchers to develop and study miniaturized devices and explore new material properties.</p>
+                        
+                        <p>Through this virtual tour, you can learn in detail about the actual operation and working principles of these devices, providing intuitive references for your research or studies.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="back-to-tour">
+                <a href="VirtualTour.html" class="resource-button">
+                    <i class="fas fa-arrow-left"></i> Return to Virtual Tour
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>© 2025 UniSA & ANFF-SA</p>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+</body>
+</html> 
