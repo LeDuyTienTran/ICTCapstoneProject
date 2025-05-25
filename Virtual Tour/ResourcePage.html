@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         .process-image {
-            width: 100%;
+            width: 75%; /* Reduced width */
+            max-width: 500px; /* Added max-width */
+            display: block; /* To allow margin auto centering */
+            margin: 15px auto; /* Centering and vertical margin */
             border-radius: 5px;
-            margin: 15px 0;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
@@ -71,49 +73,163 @@
             font-size: 1.2rem;
         }
         
-        /* New styles for improved layout */
+        /* Styles for paginated resources */
         .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+        }
+
+        .resource-card {
+            display: none;
+        }
+
+        .resource-card.active-resource-page {
+            display: flex;
+        }
+
+        .pagination-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            margin: 30px 0;
+            position: relative;
+            min-height: 44px;
+        }
+
+        .pagination-button-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pagination-button-group:first-child {
+            margin-right: auto;
+        }
+
+        .pagination-button-group:last-child {
+            margin-left: auto;
+        }
+
+        .pagination-button {
+            background-color: #004b87;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .pagination-button:hover:not(:disabled) {
+            background-color: #003a6a;
+        }
+
+        .pagination-button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
         }
         
-        .resource-card:nth-child(1) {
-            grid-column: 1 / 2;
-            grid-row: 1 / 2;
+        #pageIndicator {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #004b87;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
         }
-        
-        .resource-card:nth-child(2) {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-        }
-        
-        .resource-card:nth-child(3) {
-            grid-column: 1 / 2;
-            grid-row: 2 / 3;
-        }
-        
-        .resource-card:nth-child(4) {
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
-        }
-        
-        @media (max-width: 992px) {
-            .resource-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .resource-card:nth-child(n) {
-                grid-column: 1;
-            }
-            
-            .resource-card:nth-child(1) { grid-row: 1; }
-            .resource-card:nth-child(2) { grid-row: 2; }
-            .resource-card:nth-child(3) { grid-row: 3; }
-            .resource-card:nth-child(4) { grid-row: 4; }
+
+        .back-to-tour {
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a:not(.footer-links a):not(.pagination-button)');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('javascript:')) {
+                        e.preventDefault();
+                        document.body.classList.add('fade-out');
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 300);
+                    }
+                });
+            });
+
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    document.body.classList.remove('fade-out');
+                }
+            });
+
+            const resourceCards = document.querySelectorAll('.resource-card');
+            const prevButton = document.getElementById('prevPage');
+            const nextButton = document.getElementById('nextPage');
+            const firstPageButton = document.getElementById('firstPage');
+            const lastPageButton = document.getElementById('lastPage');
+            const pageIndicator = document.getElementById('pageIndicator');
+            let currentPage = 0;
+            const totalPages = resourceCards.length;
+
+            function showPage(pageIndex) {
+                resourceCards.forEach((card, index) => {
+                    if (index === pageIndex) {
+                        card.classList.add('active-resource-page');
+                    } else {
+                        card.classList.remove('active-resource-page');
+                    }
+                });
+                
+                pageIndicator.textContent = `Page ${pageIndex + 1} of ${totalPages}`;
+                prevButton.disabled = pageIndex === 0;
+                nextButton.disabled = pageIndex === totalPages - 1;
+                firstPageButton.disabled = pageIndex === 0;
+                lastPageButton.disabled = pageIndex === totalPages - 1;
+            }
+
+            if (prevButton && nextButton && pageIndicator && firstPageButton && lastPageButton && totalPages > 0) {
+                prevButton.addEventListener('click', () => {
+                    if (currentPage > 0) {
+                        currentPage--;
+                        showPage(currentPage);
+                    }
+                });
+
+                nextButton.addEventListener('click', () => {
+                    if (currentPage < totalPages - 1) {
+                        currentPage++;
+                        showPage(currentPage);
+                    }
+                });
+
+                firstPageButton.addEventListener('click', () => {
+                    if (currentPage !== 0) {
+                        currentPage = 0;
+                        showPage(currentPage);
+                    }
+                });
+
+                lastPageButton.addEventListener('click', () => {
+                    if (currentPage !== totalPages - 1) {
+                        currentPage = totalPages - 1;
+                        showPage(currentPage);
+                    }
+                });
+
+                // Initialize first page
+                showPage(currentPage);
+            } else {
+                const controls = document.querySelector('.pagination-controls');
+                if(controls) controls.style.display = 'none';
+            }
+        });
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -127,7 +243,6 @@
             <span class="site-title">Virtual Tour</span>
         </div>
         <div class="user-info">
-            <span>Welcome Guest</span>
             <a href="VirtualTour.html" class="logout-btn">Back to Home</a>
         </div>
     </header>
@@ -236,6 +351,18 @@
                 </div>
             </div>
             
+            <div class="pagination-controls">
+                <div class="pagination-button-group">
+                    <button id="firstPage" class="pagination-button"><i class="fas fa-step-backward"></i> First Page</button>
+                    <button id="prevPage" class="pagination-button"><i class="fas fa-arrow-left"></i> Previous</button>
+                </div>
+                <span id="pageIndicator">Page 1 of 4</span>
+                <div class="pagination-button-group">
+                    <button id="nextPage" class="pagination-button">Next <i class="fas fa-arrow-right"></i></button>
+                    <button id="lastPage" class="pagination-button">Last Page <i class="fas fa-step-forward"></i></button>
+                </div>
+            </div>
+            
             <div class="back-to-tour">
                 <a href="VirtualTour.html" class="resource-button">
                     <i class="fas fa-arrow-left"></i> Return to Virtual Tour
@@ -248,9 +375,9 @@
     <footer class="main-footer">
         <p>© 2025 UniSA & ANFF-SA</p>
         <div class="footer-links">
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-            <a href="#">Privacy Policy</a>
+            <a href="javascript:void(0)">About Us</a>
+            <a href="javascript:void(0)">Contact</a>
+            <a href="javascript:void(0)">Privacy Policy</a>
         </div>
     </footer>
 </body>
