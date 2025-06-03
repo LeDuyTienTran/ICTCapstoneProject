@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tour - UniSA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a:not(.footer-link):not(.footer-links a)');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('javascript:')) {
+                        e.preventDefault();
+                        document.body.classList.add('fade-out');
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 300); 
+                    }z
+                });
+            });
+
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    document.body.classList.remove('fade-out');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="logo_unisa.svg" alt="UniSA Logo" class="logo">
+            <span class="logo-divider">|</span>
+            <div class="anff-logo-container">
+                <img src="ANFF_icon.jpg" alt="ANFF Icon" class="logo anff-logo">
+            </div>
+            <span class="site-title">Virtual Tour</span>
+        </div>
+        <div class="user-info">
+            <a href="index.html" class="logout-btn">Back to Home</a>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section" style="height: 50vh;">
+        <div class="hero-content">
+            <h1>START YOUR VIRTUAL TOUR</h1>
+            <p>VR Tour Browser Mode</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="pc-phone-section">
+        <div class="container">
+            <div class="info-flex-container">
+                <div class="info-image-column">
+                    <img src="PC_Phone.jpg" alt="PC and Phone devices" class="info-image">
+                </div>
+                <div class="info-text-column">
+                    <h2>Browse the Virtual Tour from your PC/Phone</h2>
+                    <div style="text-align: right;">
+                        <p class="info-text">Krpano is a powerful virtual tour platform that provides smooth 360-degree viewing experience. If you encounter compatibility issues with Krpano, 3Dvista is also a user-friendly virtual tour platform that supports various devices and browsers.</p>
+                        <div class="cta-buttons">
+                            <a href="https://hosting.xroo.io/chestrack303gmail_com/38/" class="cta-button" target="_blank">Krpano</a>
+                            <span class="button-divider">|</span>
+                            <a href="https://brilliant-dodol-58e84d.netlify.app/" class="cta-button" target="_blank">3Dvista</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Links -->
+    <div class="footer-links-container">
+        <a href="javascript:void(0)" class="footer-link">
+            <i class="fas fa-envelope"></i>
+            <span>Contact Us</span>
+        </a>
+        <a href="javascript:void(0)" class="footer-link">
+            <i class="fas fa-question-circle"></i>
+            <span>Help</span>
+        </a>
+        <a href="javascript:void(0)" class="footer-link">
+            <i class="fas fa-users"></i>
+            <span>Support</span>
+        </a>
+        <a href="javascript:void(0)" class="footer-link">
+            <i class="fas fa-building"></i>
+            <span>Visit Center</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>© 2025 UniSA #placeholder</p>
+        <div class="footer-links">
+            <a href="javascript:void(0)">About Us</a>
+            <a href="javascript:void(0)">Contact</a>
+            <a href="javascript:void(0)">Privacy Policy</a>
+        </div>
+    </footer>
+</body>
+</html> 

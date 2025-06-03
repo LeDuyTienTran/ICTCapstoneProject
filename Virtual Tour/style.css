@@ -1,6 +1,6 @@
 html {
-    scroll-behavior: smooth; /* Add smooth scrolling effect */
-    scroll-padding-top: 50px; /* Add top padding for anchor links */
+    scroll-behavior: smooth; 
+    scroll-padding-top: 50px; 
 }
 
 * {
@@ -12,7 +12,7 @@ html {
 
 /* Add margin space for anchor targets */
 .how-to-operate {
-    scroll-margin-top: 50px; /* Add top margin for anchor */
+    scroll-margin-top: 50px; 
 }
 
 body {
@@ -20,7 +20,7 @@ body {
     color: #333;
     line-height: 1.6;
     opacity: 0; /* Initially hidden */
-    animation: fadeIn 0.3s ease-out forwards; /* Animation for fade in - Reduced duration */
+    animation: fadeIn 0.3s ease-out forwards; /* Animation for fade in */
 }
 
 /* Keyframes for fade-in animation */
@@ -31,7 +31,7 @@ body {
 
 /* Styles for page transitions */
 .fade-out {
-    animation: fadeOut 0.3s ease-out forwards; /* Reduced duration */
+    animation: fadeOut 0.3s ease-out forwards; 
 }
 
 @keyframes fadeOut {
@@ -107,8 +107,7 @@ body {
 /* Hero Section */
 .hero-section {
     height: 80vh;
-    background: linear-gradient(rgba(0, 75, 135, 0.8), rgba(0, 75, 135, 0.6)),
-                url('hero-background.jpg') center/cover;
+    background: linear-gradient(rgba(0, 75, 135, 0.8), rgba(0, 75, 135, 0.6));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,7 +116,7 @@ body {
     padding: 0 20px;
     margin-top: 70px;
     position: relative;
-    overflow: hidden; /* Prevent animation overflow */
+    overflow: hidden;
 }
 
 /* Add background image container and animation */
@@ -138,7 +137,7 @@ body {
 }
 
 .animated-bg {
-    width: 110%; /* Slightly larger than container to allow movement */
+    width: 110%; 
     height: 110%;
     object-fit: cover;
     position: absolute;
@@ -168,10 +167,10 @@ body {
 .hero-content {
     max-width: 800px;
     position: relative;
-    z-index: 2; /* Ensure content stays above animated background */
+    z-index: 2; 
 }
 
-/* Ensure text remains visible over animated background */
+
 .hero-section:hover .hero-content h1,
 .hero-section:hover .hero-content p,
 .hero-section:hover .signup-prompt {
@@ -216,12 +215,12 @@ body {
     font-size: 1.2rem;
     transition: all 0.3s ease;
     position: relative;
-    z-index: 3; /* Ensure button stays on top layer */
+    z-index: 3; 
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .hero-section:hover .cta-button {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 
 .cta-button:hover {
@@ -249,7 +248,7 @@ body {
 }
 
 .signup-link:hover {
-    color: #80deea; /* Lighter cyan on hover */
+    color: #80deea; 
     text-decoration: underline;
 }
 
@@ -685,7 +684,6 @@ ul.connect-nav-bar a:hover{
     color: white;
 }
 
-/* Special styles for How to Operate section */
 .info-section.how-to-operate {
     background-color: #ffffff;
 }
@@ -733,7 +731,7 @@ ul.connect-nav-bar a:hover{
     display: flex;
     align-items: center;
     gap: 40px;
-    min-height: 400px; /* Ensure consistent minimum height */
+    min-height: 400px; 
 }
 
 .info-text-column {
@@ -752,9 +750,9 @@ ul.connect-nav-bar a:hover{
     height: auto;
     border-radius: 4px;
     display: block;
-    object-fit: cover; /* Ensure image fills the space */
-    width: 100%; /* Ensure consistent image width */
-    max-height: 400px; /* Limit maximum height */
+    object-fit: cover; 
+    width: 100%; 
+    max-height: 400px; 
 }
 
 .info-text-column h2 {
@@ -801,6 +799,17 @@ ul.connect-nav-bar a:hover{
 
 .resource-button i {
     margin-right: 10px;
+}
+
+.inverted-button {
+    background-color: white;
+    color: #004b87;
+    border: 2px solid #004b87;
+}
+
+.inverted-button:hover {
+    background-color: #004b87;
+    color: white;
 }
 
 @media (max-width: 992px) {
@@ -851,7 +860,7 @@ ul.connect-nav-bar a:hover{
 }
 
 .resource-card {
-    display: none; /* Hide all cards by default */
+    display: none; 
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -860,7 +869,7 @@ ul.connect-nav-bar a:hover{
 }
 
 .resource-card.active-resource-page {
-    display: flex; /* Show active card */
+    display: flex; 
     flex-direction: column;
 }
 
@@ -1003,4 +1012,86 @@ ul.connect-nav-bar a:hover{
 .pagination-button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
+}
+
+/*  Styles for PCPhone page */
+.pc-phone-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.pc-phone-section .info-text-column {
+    text-align: right;
+}
+
+.pc-phone-section .info-text-column h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: right;
+    color: #004b87;
+}
+
+.pc-phone-section .info-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #004b87;
+    text-align: right;
+    margin-left: auto;
+    max-width: 90%;
+}
+
+.pc-phone-section .cta-buttons {
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.pc-phone-section .button-divider {
+    color: #004b87;
+    margin: 0 30px;
+}
+
+.pc-phone-section .cta-button {
+    padding: 8px 40px;
+    background-color: #004b87;
+}
+
+.pc-phone-section .cta-button:hover {
+    background-color: #003a6a; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* VRheadset Section Styles */
+.vr-headset-section {
+    padding: 80px 0;
+    background-color: #004b87;
+    color: white;
+}
+
+.vr-headset-section .info-text-column h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;  
+    font-weight: 500;
+}
+
+.vr-headset-section .info-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 90%;
+}
+
+.vr-headset-section .info-subtext {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 90%;
+}
+
+.vr-headset-section .cta-buttons {
+    margin-top: 40px; 
 }

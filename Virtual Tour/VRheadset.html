@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Only select the links that are not at the bottom
             const links = document.querySelectorAll('a:not(.footer-link):not(.footer-links a)');
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -18,14 +17,12 @@
                         document.body.classList.add('fade-out');
                         setTimeout(() => {
                             window.location.href = href;
-                        }, 300); // Match with CSS animation duration - Reduced duration
+                        }, 300); 
                     }
                 });
             });
 
-            // Handle browser back/forward buttons
             window.addEventListener('pageshow', function(event) {
-                // If page is loaded from bfcache, remove fade-out class to ensure visibility
                 if (event.persisted) {
                     document.body.classList.remove('fade-out');
                 }
@@ -44,58 +41,40 @@
             </div>
             <span class="site-title">Virtual Tour</span>
         </div>
+        <div class="user-info">
+            <a href="index.html" class="logout-btn">Back to Home</a>
+        </div>
     </header>
     
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="animated-bg-container">
-            <img src="S11_YR_2.jpg" alt="Laboratory Panorama" class="animated-bg">
-        </div>
+    <section class="hero-section" style="height: 50vh;">
         <div class="hero-content">
-            <h1>Welcome to Explore the Nanotechnology Laboratory</h1>
-            <p>Experience the internal structure and operations of the nanotechnology laboratory through immersive 3D technology</p>
-            <div class="cta-buttons">
-                <a href="https://hosting.xroo.io/chestrack303gmail_com/37/?fbclid=IwY2xjawKc3elleHRuA2FlbQIxMABicmlkETExOW1xeU1kNTBtQ1ZVZEMzAR4ygmr1fdpZusIHzwPE1KPnCCm3JeKi45YHyWYRhpjMMtgxbilJi4XrSWC6pA_aem_MygzuQSJk7JtIGl4B23ZNQ" class="cta-button" target="_blank">Start From PC/Phone</a>
-                <span class="button-divider">|</span>
-                <a href="https://portal.facilitate.tech/Interactive/View/c9dadf26-9b08-4912-887d-a980b5015f1c" class="cta-button" target="_blank">Start From VRheadset</a>
-            </div>
-            <div class="signup-prompt">
-                <span>Don't know how to operate Virtual Tour? </span>
-                <a href="#how-to-operate-section" class="signup-link">Click here</a>
-            </div>
+            <h1>START YOUR FACILITATE TOUR</h1>
+            <p>Head-Mounted Display (HMD) Mode</p>
         </div>
     </section>
 
-    <!-- Virtual Tour Overview Section -->
-    <section class="info-section">
+    <!-- Content Section -->
+    <section class="vr-headset-section">
         <div class="container">
             <div class="info-flex-container">
                 <div class="info-text-column">
-                    <h2>Virtual Tour Overview</h2>
-                    <p class="info-text">This virtual tour takes you inside the cleanroom at the Australian National Fabrication Facility (ANFF-SA), where you'll explore the photolithography process — the technology behind microchip patterning.</p>
-                    <p class="info-subtext">Click below to learn more information or relevant steps:</p>
-                    <a href="ResourcePage.html" class="resource-button">
-                        <i class="fas fa-book-open"></i> Resource Page
-                    </a>
+                    <h2>Get into the Virtual Tour from your VR headset</h2>
+                    <div>
+                        <p class="info-text">To experience our immersive virtual tour, please download the Facilitate app on your VR device and then open the following link within the app:</p>
+                        <p class="info-subtext" style="word-break: break-all; margin-bottom: 20px;">
+                            <a href="https://portal.facilitate.tech/Interactive/View/c9dadf26-9b08-4912-887d-a980b5015f1c" target="_blank" style="color: white; text-decoration: underline;">
+                                https://portal.facilitate.tech/Interactive/View/c9dadf26-9b08-4912-887d-a980b5015f1c
+                            </a>
+                        </p>
+                        <p class="info-text" style="font-size: 0.9rem; opacity: 0.85;">You can usually find the Facilitate app in your VR headset's app store. 
+                            Don't know how to install it? 
+                            <a href="TutorialPage.html" class="signup-link">Click here</a>
+                        </p>
+                    </div>
                 </div>
                 <div class="info-image-column">
-                    <img src="Overview.png" alt="Laboratory Overview" class="info-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How to Operate VR Tour Section -->
-    <section class="info-section how-to-operate" id="how-to-operate-section">
-        <div class="container">
-            <div class="info-flex-container">
-                <div class="info-image-column">
-                    <img src="How_to_use.png" alt="VR Tour Operation Guide" class="info-image">
-                </div>
-                <div class="info-text-column">
-                    <h2>How to Operate VR Tour</h2>
-                    <p class="info-text">text</p>
-                    <p class="info-subtext">text</p>
+                    <img src="VRheadset.png" alt="VR Headset" class="info-image">
                 </div>
             </div>
         </div>
@@ -131,4 +110,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html> 

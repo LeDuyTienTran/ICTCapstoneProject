@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tour - UniSA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a:not(.footer-link):not(.footer-links a)');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('javascript:')) {
+                        e.preventDefault();
+                        document.body.classList.add('fade-out');
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 300); 
+                    }
+                });
+            });
+
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    document.body.classList.remove('fade-out');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="logo_unisa.svg" alt="UniSA Logo" class="logo">
+            <span class="logo-divider">|</span>
+            <div class="anff-logo-container">
+                <img src="ANFF_icon.jpg" alt="ANFF Icon" class="logo anff-logo">
+            </div>
+            <span class="site-title">Virtual Tour</span>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="animated-bg-container">
+            <img src="S11_YR_2.jpg" alt="Laboratory Panorama" class="animated-bg">
+        </div>
+        <div class="hero-content">
+            <h1>Welcome to Explore the Nanotechnology Laboratory</h1>
+            <p>Experience the internal structure and operations of the nanotechnology laboratory through immersive 3D technology</p>
+            <div class="cta-buttons">
+                <a href="PCPhone.html" class="cta-button">Start From PC/Phone</a>
+                <span class="button-divider">|</span>
+                <a href="VRheadset.html" class="cta-button">Start From VRheadset</a>
+            </div>
+            <div class="signup-prompt">
+                <span>Don't know how to operate Virtual Tour? </span>
+                <a href="#how-to-operate-section" class="signup-link">Click here</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tour Overview Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-flex-container">
+                <div class="info-text-column">
+                    <h2>Virtual Tour Overview</h2>
+                    <p class="info-text">This virtual tour takes you inside the cleanroom at the Australian National Fabrication Facility (ANFF-SA), where you'll explore the photolithography process — the technology behind microchip patterning.</p>
+                    <p class="info-subtext">Click below to learn more information or relevant steps:</p>
+                    <a href="ResourcePage.html" class="resource-button">
+                        <i class="fas fa-book-open"></i> Resource Page
+                    </a>
+                </div>
+                <div class="info-image-column">
+                    <img src="Overview.png" alt="Laboratory Overview" class="info-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Operate VR Tour Section -->
+    <section class="info-section how-to-operate" id="how-to-operate-section">
+        <div class="container">
+            <div class="info-flex-container">
+                <div class="info-image-column">
+                    <img src="How_to_use.png" alt="VR Tour Operation Guide" class="info-image">
+                </div>
+                <div class="info-text-column">
+                    <h2>How to Operate VR Tour</h2>
+                    <div style="text-align: right;">
+                        <p class="info-text">This virtual tour will be provided by three different platforms. If you are using PC or Portable device (IOS or Android, etc.,), you will start this tour with Krpano or 3Dvista. If you are using VRheadset, you will start this Tour with Facilitate.</p>
+                        <p class="info-subtext">Click below to browse the user guide for the platforms:</p>
+                        <div style="margin-top: 20px;">
+                            <a href="TutorialPage.html" class="resource-button inverted-button">
+                                <i class="fas fa-vr-cardboard"></i> VR Tour Tutorial
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Links -->
+    <div class="footer-links-container">
+        <a href="javascript:void(0)" class="footer-link">
+            <i class="fas fa-envelope"></i>
+            <span>Contact Us</span>
+        </a>
+        <a href="javascript:void(0)" class="footer-link">
+            <i class="fas fa-question-circle"></i>
+            <span>Help</span>
+        </a>
+        <a href="javascript:void(0)" class="footer-link">
+            <i class="fas fa-users"></i>
+            <span>Support</span>
+        </a>
+        <a href="javascript:void(0)" class="footer-link">
+            <i class="fas fa-building"></i>
+            <span>Visit Center</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer"> 
+        <p>© 2025 UniSA #placeholder</p> 
+        <div class="footer-links">
+            <a href="javascript:void(0)">About Us</a>
+            <a href="javascript:void(0)">Contact</a>
+            <a href="javascript:void(0)">Privacy Policy</a>
+        </div>
+    </footer>
+</body>
+</html> 

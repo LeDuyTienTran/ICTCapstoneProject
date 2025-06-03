@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resource Page - UniSA</title>
+    <title>VR Tour Tutorial - UniSA</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         .process-image {
             width: 75%; 
-            max-width: 500px; 
+            max-width: 500px;
             display: block; 
             margin: 15px auto; 
             border-radius: 5px;
@@ -83,13 +83,13 @@
         }
 
         .resource-card.active-resource-page {
-            display: flex;
+            display: block;
         }
 
         .pagination-controls {
             display: flex;
             justify-content: space-between;
-            align-items: center; 
+            align-items: center;
             margin: 30px 0;
             position: relative;
             min-height: 44px;
@@ -128,7 +128,7 @@
             background-color: #cccccc;
             cursor: not-allowed;
         }
-        
+
         #pageIndicator {
             font-size: 1rem;
             font-weight: bold;
@@ -207,14 +207,14 @@
                         showPage(currentPage);
                     }
                 });
-
+                
                 firstPageButton.addEventListener('click', () => {
                     if (currentPage !== 0) {
                         currentPage = 0;
                         showPage(currentPage);
                     }
                 });
-
+                
                 lastPageButton.addEventListener('click', () => {
                     if (currentPage !== totalPages - 1) {
                         currentPage = totalPages - 1;
@@ -250,8 +250,8 @@
     <!-- Hero Section  -->
     <section class="hero-section" style="height: 50vh;">
         <div class="hero-content">
-            <h1>PHOTOLITHOGRAPHY</h1>
-            <p>Australian National Fabrication Facility (ANFF-SA)</p>
+            <h1>VR TOUR USER GUIDE</h1>
+            <p>Tutorials for Krpano, 3Dvista and Facilitate</p>
         </div>
     </section>
 
@@ -259,94 +259,127 @@
     <section class="content-section">
         <div class="container">
             <div class="resource-grid">
-                <!-- Laboratory Overview -->
+                <!-- Krpano Tutorial -->
                 <div class="resource-card">
                     <div class="resource-header">
-                        <h2><i class="fas fa-flask"></i> Laboratory Overview</h2>
+                        <h2><i class="fas fa-vr-cardboard"></i> Krpano</h2>
                     </div>
                     <div class="resource-content">
-                        <p class="intro-text">Lithography is the process by which a pattern is written or transferred to a substrate. The same pattern may be copied to many substrates, enabling the mass production of devices such as integrated semiconductor circuits of very fine scale which are the heart of microprocessor chips.</p>
-                        
-                        <p class="intro-text">This virtual tour will take you around the ANFF-SA photolithography cleanroom, showcasing the special equipment needed for the process from blank silicon wafer to the final pattern after development.</p>
-                        
-                        <img src="photolithography_lab_room.jpg" alt="Photolithography Lab Room" class="process-image">
-                        
-                        <h3 class="section-subtitle">Cleanroom Layout</h3>
-                        <p>The process occurs in four areas of the cleanroom: two fume hoods with chemicals needed for carrying out the coating and development (Fumehood #1 and Fumehood #2 in the floor plan diagram), the spin coater machine, and the mask aligner unit.</p>
-                        
-                        <div class="floor-plan-container">
-                            <img src="lab_floor_plan.png" alt="Lab Floor Plan" class="floor-plan">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Equipment -->
-                <div class="resource-card">
-                    <div class="resource-header">
-                        <h2><i class="fas fa-microscope"></i> Equipment & Facilities</h2>
-                    </div>
-                    <div class="resource-content">
-                        <h3 class="section-subtitle">Fumehood #1 & Mask Aligner</h3>
-                        <p>Fumehood #1 is used for the prebake process. The mask alignment system is used to expose ultraviolet light through the mask onto the photoresist-coated wafer.</p>
-                        <img src="Fumehood_1_and_The_mask_aligner_unit.png" alt="Fumehood 1 and Mask Aligner" class="process-image">
-                        
-                        <h3 class="section-subtitle">Spin Coater</h3>
-                        <p>The spin coater is used to uniformly spread a layer of photoresist on the silicon wafer. The wafer is first cleaned, and then a small amount of photoresist is applied. The wafer is spun in a controlled series of steps that results in a uniformly thick coating of photoresist over the entire surface.</p>
-                        <img src="spin_coater_unit.png" alt="Spin Coater Unit" class="process-image">
-                        
-                        <h3 class="section-subtitle">Fumehood #2</h3>
-                        <p>Fumehood #2 stores the silicon wafers and photoresist, and is used for the development process. Here, the exposed wafer is developed in a developer solution, cleaned in a water and alcohol mixture, and finally dried with ultrapure nitrogen gas.</p>
-                        <img src="Fumehood_2.png" alt="Fumehood 2" class="process-image">
-                    </div>
-                </div>
-                
-                <!-- Processes -->
-                <div class="resource-card">
-                    <div class="resource-header">
-                        <h2><i class="fas fa-cogs"></i> Photolithography Process</h2>
-                    </div>
-                    <div class="resource-content">
-                        <p class="intro-text">The photolithography process used at ANFF-SA utilizes an optically-sensitive chemical called a photoresist that forms a blank "canvas" on a silicon wafer. A thin layer of liquid photoresist is spread onto the wafer by spinning, in order to achieve a thin, uniform layer. This coated wafer is baked in order to dry the coating.</p>
-                        
-                        <ol class="process-steps" style="counter-reset: step 0;">
-                            <li>Prepare the silicon wafer and photoresist in Fumehood #2</li>
-                            <li>Move the wafer to the spin coater, first clean the wafer, then apply a small amount of photoresist</li>
-                            <li>Spin the wafer in a controlled series of steps to achieve a uniformly thick coating of photoresist over the entire surface</li>
-                            <li>Carefully transfer the wafer to Fumehood #1 for the prebake process</li>
-                            <li>After cooling, place the wafer in the mask alignment system for exposure</li>
-                            <li>Install special trays in the mask aligner to facilitate holding the coated, dried wafer and positioning the mask directly on top of it</li>
-                            <li>Once all parts are in place, expose the UV light onto the mask</li>
-                            <li>After exposure, remove the exposed wafer from the mask aligner and transfer back to Fumehood #2</li>
-                            <li>Bathe in a developer solution for about a minute, during which parts of the wafer under transparent parts of the mask dissolve into solution</li>
-                            <li>Move the wafer into a beaker containing a water+alcohol mixture to stop the development process and clean the wafer</li>
-                            <li>Finish by carefully blowing and drying the wafer with a jet of ultrapure nitrogen gas</li>
-                        </ol>
-                        
-                        <p>Through this process, a desired pattern is created on the wafer using a glass mask that has the master pattern in an opaque material (usually metal) laid onto it. The mask is placed over the coated wafer, and a beam of ultraviolet light is shined above the mask. The parts of the mask with clear glass expose the photoresist and cause a chemical change to happen, which those parts with the opaque coating are shielded from the light.</p>
-                    </div>
-                </div>
-                
-                <!-- Research & Applications -->
-                <div class="resource-card">
-                    <div class="resource-header">
-                        <h2><i class="fas fa-lightbulb"></i> Applications & Research</h2>
-                    </div>
-                    <div class="resource-content">
-                        <p class="intro-text">Photolithography technology is a fundamental process in modern microelectronics and nanotechnology fields, making the production of large-scale integrated circuits (ICs) possible.</p>
-                        
-                        <h3 class="section-subtitle">Key Application Areas</h3>
+                        <h3 class="section-subtitle">Controls</h3>
                         <ul>
-                            <li>Semiconductor integrated circuit manufacturing</li>
-                            <li>Micro-electromechanical systems (MEMS) fabrication</li>
-                            <li>Microfluidic device development</li>
-                            <li>Advanced sensor manufacturing</li>
-                            <li>Photonic component fabrication</li>
+                            <li>Click, hold, and drag left mouse button around to move the camera</li>
+                            <li>Scroll the mouse wheel to zoom in or out</li>
                         </ul>
-                        
-                        <h3 class="section-subtitle">Research Advantages at ANFF-SA</h3>
-                        <p>The photolithography facilities at ANFF-SA can achieve feature resolutions approaching 1 µm. This precision allows researchers to develop and study miniaturized devices and explore new material properties.</p>
-                        
-                        <p>Through this virtual tour, you can learn in detail about the actual operation and working principles of these devices, providing intuitive references for your research or studies.</p>
+
+                        <h3 class="section-subtitle">Legends</h3>
+                        <p>Hot spots:</p>
+                        <ul>
+                            <li>Movement hot spot (the arrow icon): Click to move to another scene</li>
+                            <li>Text hot spot (the ! icon): Click to show text. Click again to hide it</li>
+                            <li>Image hot spot (the image icon): Click to show an image. Click on the image to hide it</li>
+                            <li>Audio hot spot (the speaker icon): Click to turn on an audio recording. Click the middle of the screen to turn it off</li>
+                            <li>Video hot spot (the play button): Click to turn on a video. Click on the video to turn it off. The video resumes wherever it last left off except when you leave the scene, in which case the video restarts</li>
+                            <li>Numbered hot spots (icons with a number): Should be activated in numerical order. Can show either text or video. Turn off using the same method as above for each media type</li>
+                        </ul>
+
+                        <h3 class="section-subtitle">Menu bar</h3>
+                        <ul>
+                            <li>Double left arrows: Return to the previous scene</li>
+                            <li>Four squares: Open the navigation panel which shows all scenes in the tour. Can click, hold, and drag left mouse button left or right on the panel or click on the double arrows to move the panel. Click this icon again hides the panel</li>
+                            <li>Four single arrows: Move the camera in the corresponding direction</li>
+                            <li>+ and - icons: Zoom the camera in or out, respectively</li>
+                            <li>Glasses icon: Go into simulated VR mode on browser (WORK IN PROGRESS)</li>
+                            <li>Four diagonal arrows: Turn on full-screen mode. Click again to turn it off</li>
+                            <li>Down arrow: Hide the menu bar. Click again to show it</li>
+                            <li>Double right arrows: Go to the next scene</li>
+                        </ul>
+
+                        <h3 class="section-subtitle">Floorplan</h3>
+                        <ul>
+                            <li>Located at the bottom left of the screen</li>
+                            <li>Shows the overall layout of the tour</li>
+                            <li>The red icon shows the user's current location in a scene</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3DVista Tutorial -->
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h2><i class="fas fa-vr-cardboard"></i> 3Dvista</h2>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="section-subtitle">Controls</h3>
+                        <ul>
+                            <li>Click, hold, and drag the left mouse button to move the camera</li>
+                            <li>Scroll the mouse wheel or drag with fingers to zoom in or out the view</li>
+                        </ul>
+
+                        <h3 class="section-subtitle">Hot spots</h3>
+                        <ul>
+                            <li>Movement hot spot (arrow or door icon): Click to move to another scene</li>
+                            <li>Text hot spot (red or blue "i" icon): Click to display text</li>
+                            <li>Floorplan hot spot (flashing white "i" icon): Click to show your current location</li>
+                            <li>Image hot spot (image icon): Click to display the image</li>
+                            <li>Audio hot spot (speaker icon): Click to play audio, click again to pause playback</li>
+                            <li>Video hot spot (play button): Click to open video. You can freely drag the progress bar or click the video to pause and control video progress</li>
+                            <li>Numbered hot spots (icons with numbers): Should be activated in numerical order. Can display either text or video. Please check the text hot spot hints in the current scene for specific information</li>
+                        </ul>
+
+                        <h3 class="section-subtitle">Navigation</h3>
+                        <ul>
+                            <li>Blue square button at the bottom left of the screen: Opens the navigation panel showing all scenes in the tour for quick movement between different scenes. You can click, hold and drag on the panel to move it left or right. Click this icon again to hide the panel</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Facilitate Tutorial -->
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h2><i class="fas fa-vr-cardboard"></i> Facilitate</h2>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="section-subtitle">Controls</h3>
+                        <ul>
+                            <li>Hold the gamepad control button to move around and zoom in (out)</li>
+                        </ul>
+
+                        <h3 class="section-subtitle">Hot spots</h3>
+                        <ul>
+                            <li>Transition icon: Click to move to next scene</li>
+                            <li>Text icon: Click to show information and click CLOSE to close the text</li>
+                            <li>Image icon: Click to show the image</li>
+                            <li>Audio icon: Click to turn on an audio recording. Click again to pause or finish the audio</li>
+                            <li>Video icon: Click to play the video</li>
+                            <li>Numbered icons: To show the step information in text or image</li>
+                            <li>Green exit icon: Click to exit the scene</li>
+                            <li>Location icon: It represents the user current location</li>
+                        </ul>
+
+                        <h3 class="section-subtitle">Menu bar</h3>
+                        <ul>
+                            <li>Use the laser and trigger button to interact with the buttons</li>
+                            <li>To navigate through the virtual tour content, use the forward and back buttons</li>
+                            <li>Use the refresh button to restart the content/current step</li>
+                            <li>You can return to the start space whilst inside immersive content by pressing the home button</li>
+                        </ul>
+
+                        <h3 class="section-subtitle">Using Facilitate in VR headsets</h3>
+                        <ol class="process-steps" style="counter-reset: step 0;">
+                            <li>Download the Facilitate in VR headsets App Store.</li>
+                            <li>Open the Facilitate in VR headset, and Log in the account.</li>
+                            <li>Invite user into the virtual tour session through Facilitate website.</li>
+                            <li>Once user is logged in, it will see the Title Menu.</li>
+                            <li>You can access each menu section by pointing and clicking on the boxes.</li>
+                            <li>Once enter a menu section, you can choose from the list of available sessions.</li>
+                            <li>If you cannot find your session, press the "refresh" button, and check if you've been invited. Otherwise used the session code.</li>
+                            <li>You can see the session's details. Now you can download the session content and enter the session.</li>
+                            <li>You can always save the session for Offline use.</li>
+                            <li>Select the 'Session Code' panel from the menu.</li>
+                            <li>Enter the 6 digit code, and select 'Submit'. Download and enter the session.</li>
+                            <li>User can also adjust the settings whilst in the title menu. Display, Audio, and control downloads.</li>
+                            <li>Simply select the log out button to log out of your device.</li>
+                        </ol>
                     </div>
                 </div>
             </div>
@@ -356,7 +389,7 @@
                     <button id="firstPage" class="pagination-button"><i class="fas fa-step-backward"></i> First Page</button>
                     <button id="prevPage" class="pagination-button"><i class="fas fa-arrow-left"></i> Previous</button>
                 </div>
-                <span id="pageIndicator">Page 1 of 4</span>
+                <span id="pageIndicator">Page 1 of 3</span>
                 <div class="pagination-button-group">
                     <button id="nextPage" class="pagination-button">Next <i class="fas fa-arrow-right"></i></button>
                     <button id="lastPage" class="pagination-button">Last Page <i class="fas fa-step-forward"></i></button>
