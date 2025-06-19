@@ -41,15 +41,15 @@ body {
 
 /* Header Styles */
 .main-header {
-    background-color: #004b87;
-    color: white;
+    background-color: white;
+    color: #140F50;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     width: 100%;
-    top: 0;
+    top: 40px;
     z-index: 1000;
 }
 
@@ -64,7 +64,7 @@ body {
 }
 
 .logo-divider {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(20, 15, 80, 0.7);
     font-size: 1.5rem;
     font-weight: 300;
     margin: 0 10px;
@@ -100,21 +100,21 @@ body {
 
 .logout-btn {
     margin-left: 15px;
-    color: white;
+    color: #140F50;
     text-decoration: none;
 }
 
 /* Hero Section */
 .hero-section {
     height: 80vh;
-    background: linear-gradient(rgba(0, 75, 135, 0.8), rgba(0, 75, 135, 0.6));
+    background: linear-gradient(rgba(20, 15, 80, 0.8), rgba(20, 15, 80, 0.6));
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     padding: 0 20px;
-    margin-top: 70px;
+    margin-top: 110px;
     position: relative;
     overflow: hidden;
 }
@@ -267,7 +267,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: #004b87;
+    color: #140F50;
     transition: transform 0.3s;
     min-width: 100px;
 }
@@ -288,7 +288,7 @@ body {
 
 /* Footer */
 .main-footer {
-    background-color: #004b87;
+    background-color: #140F50;
     color: white;
     padding: 30px 20px;
     text-align: center;
@@ -486,7 +486,7 @@ ul.connect-nav-bar a:hover{
 
 .section-title {
     font-size: 1.2rem;
-    color: #004b87;
+    color: #140F50;
     margin: 0;
 }
 
@@ -557,14 +557,14 @@ ul.connect-nav-bar a:hover{
 }
 
 .info-icon {
-    color: #004b87;
+    color: #140F50;
     margin-right: 10px;
     min-width: 16px;
 }
 
 /* Buttons */
 .view-btn {
-    background-color: #004b87;
+    background-color: #140F50;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -590,7 +590,7 @@ ul.connect-nav-bar a:hover{
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #004b87;
+    color: #140F50;
     transition: transform 0.2s;
 }
 
@@ -680,7 +680,7 @@ ul.connect-nav-bar a:hover{
 /* Info Section Styles */
 .info-section {
     padding: 80px 0;
-    background-color: #004b87;
+    background-color: #140F50;
     color: white;
 }
 
@@ -697,14 +697,14 @@ ul.connect-nav-bar a:hover{
     margin-bottom: 30px;
     font-weight: 500;
     text-align: right;
-    color: #004b87;
+    color: #140F50;
 }
 
 .how-to-operate .info-text {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 30px;
-    color: #004b87;
+    color: #140F50;
     text-align: right;
     margin-left: auto;
     max-width: 90%;
@@ -714,7 +714,7 @@ ul.connect-nav-bar a:hover{
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 35px;
-    color: #004b87;
+    color: #140F50;
     opacity: 0.8;
     text-align: right;
     margin-left: auto;
@@ -794,7 +794,7 @@ ul.connect-nav-bar a:hover{
 
 .resource-button:hover {
     background-color: white;
-    color: #004b87;
+    color: #140F50;
 }
 
 .resource-button i {
@@ -803,12 +803,12 @@ ul.connect-nav-bar a:hover{
 
 .inverted-button {
     background-color: white;
-    color: #004b87;
-    border: 2px solid #004b87;
+    color: #140F50;
+    border: 2px solid #140F50;
 }
 
 .inverted-button:hover {
-    background-color: #004b87;
+    background-color: #140F50;
     color: white;
 }
 
@@ -879,7 +879,7 @@ ul.connect-nav-bar a:hover{
 }
 
 .resource-header {
-    background-color: #004b87;
+    background-color: #140F50;
     padding: 18px 25px;
     color: white;
     width: 100%;
@@ -930,7 +930,7 @@ ul.connect-nav-bar a:hover{
 .back-to-tour .resource-button {
     display: inline-block;
     padding: 12px 25px;
-    background-color: #004b87;
+    background-color: #140F50;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -986,7 +986,7 @@ ul.connect-nav-bar a:hover{
 #pageIndicator {
     font-size: 1rem;
     font-weight: bold;
-    color: #004b87;
+    color: #140F50;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -995,7 +995,7 @@ ul.connect-nav-bar a:hover{
 }
 
 .pagination-button {
-    background-color: #004b87;
+    background-color: #140F50;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -1029,14 +1029,14 @@ ul.connect-nav-bar a:hover{
     margin-bottom: 20px;
     font-weight: 500;
     text-align: right;
-    color: #004b87;
+    color: #140F50;
 }
 
 .pc-phone-section .info-text {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 30px;
-    color: #004b87;
+    color: #140F50;
     text-align: right;
     margin-left: auto;
     max-width: 90%;
@@ -1048,13 +1048,13 @@ ul.connect-nav-bar a:hover{
 }
 
 .pc-phone-section .button-divider {
-    color: #004b87;
+    color: #140F50;
     margin: 0 30px;
 }
 
 .pc-phone-section .cta-button {
     padding: 8px 40px;
-    background-color: #004b87;
+    background-color: #140F50;
 }
 
 .pc-phone-section .cta-button:hover {
@@ -1066,7 +1066,7 @@ ul.connect-nav-bar a:hover{
 /* VRheadset Section Styles */
 .vr-headset-section {
     padding: 80px 0;
-    background-color: #004b87;
+    background-color: #140F50;
     color: white;
 }
 
@@ -1094,4 +1094,13 @@ ul.connect-nav-bar a:hover{
 
 .vr-headset-section .cta-buttons {
     margin-top: 40px; 
+}
+
+.white-bar {
+    height: 40px;
+    background-color: #140F50;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1001;
 }
